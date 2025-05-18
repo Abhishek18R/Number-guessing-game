@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1 class="bounce">Number Guessing Game</h1>
+            <div class="settings-panel">
+                <button id="settingsBtn" class="icon-btn"><i class="fas fa-cog fa-spin"></i></button>
+                <button id="soundBtn" class="icon-btn"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </div>
+
+        <p id="rangeMessage" class="range-message">Try to guess the number between 1 and 100!</p>
+
+        <div id="settingsMenu" class="hidden">
+            <h3>Game Settings</h3>
+            <div class="setting-group">
+                <label>Difficulty:</label>
+                <select id="difficultySelect">
+                    <option value="easy">Easy (1-50)</option>
+                    <option value="normal" selected>Normal (1-100)</option>
+                    <option value="hard">Hard (1-200)</option>
+                    <option value="expert">Expert (1-500)</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>Game Mode:</label>
+                <select id="gameModeSelect">
+                    <option value="normal">Normal</option>
+                    <option value="timed">Timed Challenge</option>
+                    <option value="limited">Limited Attempts</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div id="timerDisplay" class="hidden">Time: <span>00:00</span></div>
+            <div id="attemptsLeft" class="hidden">Attempts Left: <span>10</span></div>
+        </div>
+
+        <div class="game-container">
+            <div class="input-group">
+                <input type="number" id="guessInput" placeholder="Enter your guess">
+                <button id="guessBtn" class="pulse">
+                    <i class="fas fa-paper-plane"></i> Submit
+                </button>
+            </div>
+            <div class="hint-container">
+                <p id="message"></p>
+                <p id="hint"></p>
+            </div>
+            <div class="game-controls">
+                <button id="newGameBtn" class="hidden pulse">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                <button id="hintBtn" class="feature-btn">
+                    <i class="fas fa-lightbulb"></i> Use Hint
+                </button>
+            </div>
+        </div>
+
+        <div class="scoreboard">
+            <h2><i class="fas fa-trophy"></i> High Scores</h2>
+            <div class="score-filters">
+                <button class="score-filter active" data-mode="all">All</button>
+                <button class="score-filter" data-mode="normal">Normal</button>
+                <button class="score-filter" data-mode="timed">Timed</button>
+                <button class="score-filter" data-mode="limited">Limited</button>
+            </div>
+            <div id="scoreList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
